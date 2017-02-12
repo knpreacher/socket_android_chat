@@ -1,4 +1,4 @@
-#Thu Feb 09 13:32:49 MSK 2017
+#Sun Feb 12 17:29:33 MSK 2017
 base.0=/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b27f1e0178db157ef69b790090238254f3b864db
 renamed.1=classes.dex
 renamed.0=classes2.dex
