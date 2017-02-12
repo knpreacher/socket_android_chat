@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp"
+    >
+
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp"
+        android:id="@+id/tvTime"
+        android:textColor="@color/textGray" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvText"
+        android:background="@drawable/background_my"
+        android:layout_below="@+id/tvLogin"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/textGray" />
+
+</RelativeLayout>

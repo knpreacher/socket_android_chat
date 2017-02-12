@@ -1,0 +1,7 @@
+#Thu Feb 09 13:32:49 MSK 2017
+base.0=/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b27f1e0178db157ef69b790090238254f3b864db
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_eae3af4d99c8987841d6d0e79de8dbc37ef0d06b/classes.dex
+base.1=/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_eae3af4d99c8987841d6d0e79de8dbc37ef0d06b
+file.0=/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b27f1e0178db157ef69b790090238254f3b864db/classes.dex

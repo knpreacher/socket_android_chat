@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/rell"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="40dp"
+        android:background="@color/grey_2">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnSend"
+            android:background="@android:drawable/ic_menu_send"
+            android:layout_width="40dp" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/btnMore"
+            android:background="@android:drawable/ic_menu_add"
+            android:layout_width="40dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences|textMultiLine"
+            android:ems="10"
+            android:id="@+id/etMessege"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnMore"
+            android:layout_toStartOf="@+id/btnSend"
+            android:textColor="@color/textGray"
+            android:textColorHighlight="@color/colorAccent"
+            android:maxLines="4"
+            android:lines="3" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/rell"
+        android:id="@+id/rvForMessages"
+        android:background="@color/grey_2" />
+
+</RelativeLayout>
