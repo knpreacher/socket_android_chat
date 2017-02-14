@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:2:1-29:12
 	package
 		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml
@@ -15,10 +15,11 @@ ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManife
 		INJECTED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:4:1-79
+MERGED from [com.github.halysongoncalves:pugnotification:1.8.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.github.halysongoncalves/pugnotification/1.8.1/AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:4:18-60
 application
-ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:5:5-24:19
+ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:5:5-27:19
 MERGED from [com.android.support:design:25.0.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/AndroidManifest.xml:22:5-20
@@ -27,8 +28,8 @@ MERGED from [com.android.support:transition:25.0.1] /home/knp/AndroidStudioProje
 MERGED from [com.android.support:support-v4:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-core-ui:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:8:9-41
@@ -61,7 +62,9 @@ ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManife
 	android:name
 		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:20:13-41
 activity#com.example.knp.socketchat.ChatActivity
-ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:23:9-59
+ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:23:9-26:20
+	android:theme
+		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:24:13-45
 	android:name
 		ADDED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml:23:19-47
 uses-sdk
@@ -71,12 +74,13 @@ MERGED from [com.android.support:appcompat-v7:25.1.1] /home/knp/AndroidStudioPro
 MERGED from [com.android.support:animated-vector-drawable:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:transition:25.0.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.github.halysongoncalves:pugnotification:1.8.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.github.halysongoncalves/pugnotification/1.8.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:recyclerview-v7:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-core-ui:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.1.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.0.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:23:9-59
@@ -86,3 +90,7 @@ MERGED from [com.android.support:support-compat:25.1.1] /home/knp/AndroidStudioP
 	android:minSdkVersion
 		INJECTED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml
 		INJECTED from /home/knp/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.VIBRATE
+ADDED from [com.github.halysongoncalves:pugnotification:1.8.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.github.halysongoncalves/pugnotification/1.8.1/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from [com.github.halysongoncalves:pugnotification:1.8.1] /home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.github.halysongoncalves/pugnotification/1.8.1/AndroidManifest.xml:12:22-63

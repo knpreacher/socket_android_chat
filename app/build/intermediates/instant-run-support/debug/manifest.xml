@@ -9,6 +9,7 @@
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
@@ -28,7 +29,10 @@
             android:name="com.example.knp.socketchat.PrefActivity"
             android:theme="@android:style/Theme.Material.NoActionBar" >
         </activity>
-        <activity android:name="com.example.knp.socketchat.ChatActivity" />
+        <activity
+            android:name="com.example.knp.socketchat.ChatActivity"
+            android:theme="@style/ChatTheme" >
+        </activity>
     </application>
 
 </manifest>

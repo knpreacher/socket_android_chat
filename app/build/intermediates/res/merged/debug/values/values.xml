@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="pugnotification_reply_choices">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Maybe</item>
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -74,6 +79,8 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="pugnotification_background">#CC2f2f2f</color>
+    <color name="pugnotification_color_white">#FFFFFF</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -531,6 +538,9 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="pugnotification_dimension_default">8dp</dimen>
+    <dimen name="pugnotification_text_size_subtitle">14sp</dimen>
+    <dimen name="pugnotification_text_size_title">18sp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -588,6 +598,14 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="pugnotification_key_voice_reply">extra_voice_reply</string>
+    <string name="pugnotification_label_voice_reply">Reply</string>
+    <string name="pugnotification_text_description_image_background">Background</string>
+    <string name="pugnotification_text_description_image_icon">Small Icon</string>
+    <string name="pugnotification_text_message">Message</string>
+    <string name="pugnotification_text_notification">Notification</string>
+    <string name="pugnotification_text_notification_custom">Notification Custom</string>
+    <string name="pugnotification_text_title">Title</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -1637,6 +1655,17 @@
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style name="ChatTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/grey_2</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+
+
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:editTextStyle">@style/App_EditTextStyle</item>
+
     </style>
     <style name="MButton" parent="Base.Widget.AppCompat.Button.Borderless">
 

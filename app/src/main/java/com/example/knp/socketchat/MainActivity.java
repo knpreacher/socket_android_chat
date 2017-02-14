@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         if(sp.getString("login","")!=null && sp.getString("room","")!=null){
             etLogin.setText(sp.getString("login",""));
             etRoom.setText(sp.getString("room",""));
+            connect();
             cbRM.setChecked(true);
             btnLogin.setEnabled(true);
         }
@@ -67,48 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(etRoom.getTextSize()>0 && etLogin.getTextSize()>0) {
-                    final ProgressDialog pd = new ProgressDialog(MainActivity.this);
-                    pd.show();
-                    if (cbRM.isChecked()) {
-                        SharedPreferences.Editor editor = sp.edit();
-                        editor.putString("login", etLogin.getText().toString());
-                        editor.putString("room", etRoom.getText().toString());
-                        editor.commit();
-                    }
-                    try {
-                        Log.i(TAG, "onClick: sp.address" + sp.getString("address", ""));
-                        Log.i(TAG, "onClick: sp.port" + sp.getString("port", ""));
-
-                        mSocket = new MSocket();
-                        mSocket.connect("http://" + sp.getString("address", "") + ":8080");
-                        //mSocket.connect("http://192.168.0.222:8080");
-                        final JSONObject data = new JSONObject();
-                        data.put("login", etLogin.getText().toString());
-                        login = etLogin.getText().toString();
-                        data.put("room", etRoom.getText().toString());
-                        mSocket.getSocket().on("gon", new Emitter.Listener() {
-                            @Override
-                            public void call(Object... args) {
-                                mSocket.getSocket().emit("checkMyData", data);
-                            }
-                        });
-                        mSocket.getSocket().on("welcome", new Emitter.Listener() {
-                            @Override
-                            public void call(Object... args) {
-                                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
-                                intent.putExtra("room", etRoom.getText().toString());
-                                intent.putExtra("login", etLogin.getText().toString());
-                                intent.putExtra("count", (int) args[0]);
-                                startActivity(intent);
-                                pd.dismiss();
-                            }
-                        });
-                    } catch (URISyntaxException e) {
-                        e.printStackTrace();
-                        pd.dismiss();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    connect();
                 } else {
                     Toast.makeText(MainActivity.this, "Please input login and room", Toast.LENGTH_SHORT).show();
                 }
@@ -134,5 +94,54 @@ public class MainActivity extends AppCompatActivity {
         tvv.setText(sp.getString("address",""));
         Log.i(TAG, "onClick: sp.address"+sp.getString("address",""));
         Log.i(TAG, "onClick: sp.port"+sp.getString("port",""));
+    }
+
+    private void connect(){
+        final ProgressDialog pd = new ProgressDialog(MainActivity.this);
+        pd.show();
+        if (cbRM.isChecked()) {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("login", etLogin.getText().toString());
+            editor.putString("room", etRoom.getText().toString());
+            editor.commit();
+        }
+        try {
+            Log.i(TAG, "onClick: sp.address" + sp.getString("address", ""));
+            Log.i(TAG, "onClick: sp.port" + sp.getString("port", ""));
+
+            mSocket = new MSocket();
+            mSocket.connect("http://" + sp.getString("address", "") + ":8080");
+            //mSocket.connect("http://192.168.0.222:8080");
+            final JSONObject data = new JSONObject();
+            data.put("login", etLogin.getText().toString());
+            login = etLogin.getText().toString();
+            data.put("room", etRoom.getText().toString());
+            mSocket.getSocket().on("gon", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    mSocket.getSocket().emit("checkMyData", data);
+                }
+            });
+            mSocket.getSocket().on("welcome", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+                    intent.putExtra("room", etRoom.getText().toString());
+                    intent.putExtra("login", etLogin.getText().toString());
+                    intent.putExtra("count", (int) args[0]);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("activeLogin",etLogin.getText().toString());
+                    editor.putString("activeRoom",etRoom.getText().toString());
+                    editor.commit();
+                    startActivity(intent);
+                    pd.dismiss();
+                }
+            });
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            pd.dismiss();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -152,6 +152,10 @@
         "source": "/home/knp/AndroidStudioProjects/SocketChat/app/src/main/res/layout/chat_layout.xml"
     },
     {
+        "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/layout/pugnotification_custom.xml",
+        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.github.halysongoncalves/pugnotification/1.8.1/res/layout/pugnotification_custom.xml"
+    },
+    {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout/abc_alert_dialog_material.xml"
     },

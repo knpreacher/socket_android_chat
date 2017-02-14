@@ -20,7 +20,10 @@
             android:name=".PrefActivity">
 
         </activity>
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity"
+            android:theme="@style/ChatTheme">
+
+        </activity>
     </application>
 
 </manifest>

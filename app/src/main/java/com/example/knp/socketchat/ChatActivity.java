@@ -1,8 +1,12 @@
 package com.example.knp.socketchat;
 
+import android.app.Notification;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.MainThread;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -25,6 +29,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
+import br.com.goncalves.pugnotification.notification.PugNotification;
 import io.socket.emitter.Emitter;
 
 /**
@@ -46,9 +51,16 @@ public class ChatActivity extends AppCompatActivity {
     String se = "Online: ";
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_layout);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if(sp.getString("activeLogin","")==null || sp.getString("activeRoom","")==null){
+            intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         intent = getIntent();
         Log.i(TAG, "onCreate: "+intent.getStringExtra("login"));
@@ -82,6 +94,17 @@ public class ChatActivity extends AppCompatActivity {
                     m.setSender(data.getString("login"));
                     m.setText(data.getString("text"));
                     m.setTime(data.getString("time"));
+                            PugNotification
+                                    .with(ChatActivity.this)
+                                    .load()
+                                    .title(data.getString("login"))
+                                    .message(data.getString("text"))
+                                    .smallIcon(R.drawable.icon)
+                                    .largeIcon(R.drawable.icon)
+                                    .flags(Notification.DEFAULT_ALL)
+                                    .click(ChatActivity.class,savedInstanceState)
+                                    .simple()
+                                    .build();
                     messages.add(m);
                     update();
                 } catch (JSONException e) {

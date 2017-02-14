@@ -5,29 +5,29 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="5263686408558"
+    timestamp="6579342798930"
     token="-3038898764771574559"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="4551" />
+        duration="2313" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2177" />
+        duration="430" />
     <task
         name="verifier"
-        duration="28" />
+        duration="9" />
 
     <artifact
         location="/home/knp/AndroidStudioProjects/SocketChat/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="5263686408558"
+        timestamp="6579342798930"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/knp/AndroidStudioProjects/SocketChat/app/build/outputs/apk/app-debug.apk"
