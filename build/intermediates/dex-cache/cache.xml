@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2a051fdfd69fb1119a86b95c439711c4080840a1">
+        sha1="44eb1e2b89df45b00fb3ddd7f5f0967ff37d87ca">
         <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_eae3af4d99c8987841d6d0e79de8dbc37ef0d06b/classes.dex" />
     </item>
     <item
@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="4e4a0bbb8e7b1d5ae5937162769cd5674e983fe9">
+        sha1="2308a74efeb7a28704c79df7b0827a27ff0a3a2d">
         <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b27f1e0178db157ef69b790090238254f3b864db/classes.dex" />
     </item>
     <item

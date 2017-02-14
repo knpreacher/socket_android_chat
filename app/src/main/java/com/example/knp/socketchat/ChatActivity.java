@@ -1,6 +1,9 @@
 package com.example.knp.socketchat;
 
+import android.app.Activity;
 import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -37,6 +40,8 @@ import io.socket.emitter.Emitter;
  */
 
 public class ChatActivity extends AppCompatActivity {
+
+    static boolean inActivity = true;
 
     private static final String TAG = "LOGIIIIIIIIIIIIII";
     RecyclerView recyclerView;
@@ -94,17 +99,20 @@ public class ChatActivity extends AppCompatActivity {
                     m.setSender(data.getString("login"));
                     m.setText(data.getString("text"));
                     m.setTime(data.getString("time"));
+                        if(!inActivity) {
                             PugNotification
                                     .with(ChatActivity.this)
                                     .load()
+                                    .identifier(4898)
                                     .title(data.getString("login"))
                                     .message(data.getString("text"))
                                     .smallIcon(R.drawable.icon)
                                     .largeIcon(R.drawable.icon)
                                     .flags(Notification.DEFAULT_ALL)
-                                    .click(ChatActivity.class,savedInstanceState)
+                                    .click(ChatActivity.class, savedInstanceState)
                                     .simple()
                                     .build();
+                        }
                     messages.add(m);
                     update();
                 } catch (JSONException e) {
@@ -197,6 +205,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
+
     void update(){
         runOnUiThread(new Runnable() {
             @Override
@@ -207,6 +216,22 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
+        inActivity = false;
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        Log.i(TAG, "onPostResume: ");
+        inActivity = true;
+        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(4898);
     }
 
     @Override

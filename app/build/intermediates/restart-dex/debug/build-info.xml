@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="23"
-    density="xhdpi"
+    abi="armeabi-v7a,armeabi"
+    api-level="25"
+    density="hdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="6579342798930"
+    timestamp="8423160503070"
     token="-3038898764771574559"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2313" />
+        duration="176" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="430" />
+        duration="45" />
     <task
         name="verifier"
-        duration="9" />
+        duration="2" />
 
     <artifact
-        location="/home/knp/AndroidStudioProjects/SocketChat/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="6579342798930"
+        timestamp="7464282919613"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/knp/AndroidStudioProjects/SocketChat/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="8423160503070"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
