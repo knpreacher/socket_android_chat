@@ -112,6 +112,10 @@
         "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout/abc_search_view.xml"
     },
     {
+        "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/layout/reg_layout.xml",
+        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/src/main/res/layout/reg_layout.xml"
+    },
+    {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/home/knp/AndroidStudioProjects/SocketChat/app/src/main/res/layout/activity_main.xml"
     },

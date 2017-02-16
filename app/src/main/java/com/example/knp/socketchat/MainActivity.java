@@ -4,11 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,6 +23,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 import io.socket.client.IO;
 import io.socket.client.Socket;
@@ -44,15 +48,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.right_in,R.anim.left_out);
-        //getSupportActionBar().hide();
-        etLogin = (EditText)findViewById(R.id.input_login);
-        etRoom = (EditText)findViewById(R.id.input_room);
-        tvSAH = (TextView)findViewById(R.id.tvSAH);
-        cbRM = (CheckBox)findViewById(R.id.cbRM);
-        tvv = (TextView)findViewById(R.id.textView);
-        btnLogin = (Button)findViewById(R.id.btnLogin);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        List<View> pages = new ArrayList<>();
+
+        View page = inflater.inflate(R.layout.activity_main,null);
+
+        etLogin = (EditText)page.findViewById(R.id.input_login);
+        etRoom = (EditText)page.findViewById(R.id.input_room);
+        tvSAH = (TextView)page.findViewById(R.id.tvSAH);
+        cbRM = (CheckBox)page.findViewById(R.id.cbRM);
+        tvv = (TextView)page.findViewById(R.id.textView);
+        btnLogin = (Button)page.findViewById(R.id.btnLogin);
+
+        pages.add(page);
+
+        page = inflater.inflate(R.layout.reg_layout,null);
+        pages.add(page);
 
         sp = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -86,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        VPAdapter adapter = new VPAdapter(pages);
+        ViewPager viewPager = new ViewPager(this);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(0);
+        setContentView(viewPager);
     }
 
     @Override

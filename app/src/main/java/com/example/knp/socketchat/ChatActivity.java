@@ -1,6 +1,5 @@
 package com.example.knp.socketchat;
 
-import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -8,23 +7,24 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.annotation.MainThread;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,9 +49,12 @@ public class ChatActivity extends AppCompatActivity {
     Intent intent;
     Button btnSend;
     EditText etMessage;
+    Handler typingHandler = new Handler();
     ArrayList<Message> messages;
     MSocket mSocket;
     Toolbar toolbar;
+    TextView tvIsTyping;
+    boolean isTyping=false;
 
     String se = "Online: ";
 
@@ -60,7 +63,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_layout);
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
 
         if(sp.getString("activeLogin","")==null || sp.getString("activeRoom","")==null){
             intent = new Intent(this, MainActivity.class);
@@ -71,6 +74,7 @@ public class ChatActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate: "+intent.getStringExtra("login"));
         mSocket = new MSocket();
 
+        tvIsTyping = (TextView)findViewById(R.id.tvIsTyping);
         btnSend = (Button)findViewById(R.id.btnSend);
         etMessage = (EditText)findViewById(R.id.etMessege);
         recyclerView = (RecyclerView)findViewById(R.id.rvForMessages);
@@ -86,7 +90,40 @@ public class ChatActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         messages = new ArrayList<>();
+
         chatRecyclerAdapter = new ChatRecyclerAdapter(this,messages);
+
+        etMessage.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!isTyping && etMessage.getText().length()!=0){
+                    JSONObject data = new JSONObject();
+                    try {
+                        data.put("login",intent.getStringExtra("login"));
+                        data.put("room",intent.getStringExtra("room"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+            //TODO: server!!!!!!!!!!!!!!!!!!!!!
+
+                    isTyping = true;
+                    mSocket.getSocket().emit("typing",data);
+                }
+
+                typingHandler.removeCallbacks(onTypingTimeout);
+                typingHandler.postDelayed(onTypingTimeout,500);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         mSocket.getSocket().on("newMes", new Emitter.Listener() {
             @Override
@@ -153,10 +190,40 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        mSocket.getSocket().on("typing", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                final JSONObject data = (JSONObject) args[0];
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            tvIsTyping.setText(data.getString("login") + " is typing...");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+
+        mSocket.getSocket().on("stop typing", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        tvIsTyping.setText("");
+                    }
+                });
+            }
+        });
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etMessage.getTextSize()>0) {
+                if(etMessage.getText().length()>0) {
                     Message m = new Message(0);
                     m.setText(etMessage.getText().toString());
                     Date date = new Date();
@@ -192,6 +259,22 @@ public class ChatActivity extends AppCompatActivity {
 
 
     }
+    private Runnable onTypingTimeout = new Runnable() {
+        @Override
+        public void run() {
+            if (!isTyping) return;
+
+            isTyping = false;
+            JSONObject data = new JSONObject();
+            try {
+                data.put("login",intent.getStringExtra("login"));
+                data.put("room",intent.getStringExtra("room"));
+                mSocket.getSocket().emit("stop typing",data);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    };
 
     void update(final int count){
         runOnUiThread(new Runnable() {
@@ -249,5 +332,12 @@ public class ChatActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mSocket.getSocket().disconnect();
+        mSocket.getSocket().close();
     }
 }
