@@ -30,6 +30,15 @@
 
     </style>
 
+    <style name="App_ETMESStyle" parent="@android:style/Widget.EditText">
+        <item name="colorControlNormal">@color/grey_3</item>
+        <item name="colorControlActivated">@color/grey_3</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@color/textGray</item>
+        <item name="android:layout_height">45dip</item>
+
+    </style>
+
     <style name="TextLabel" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@android:color/holo_green_dark</item>
         <item name="android:textColorHint">@android:color/holo_green_dark</item>

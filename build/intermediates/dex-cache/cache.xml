@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="dd196de74864a02ab4a9c4c2790c6e25d3fc4ca0">
+        sha1="fd4c20b63a257729f961ed44481daaf70740da28">
         <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_eae3af4d99c8987841d6d0e79de8dbc37ef0d06b/classes.dex" />
     </item>
     <item
@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="734ef62afa3de3ea04cc7fa3ef0670239b8f0d1a">
+        sha1="4f4961eda70206032bdf8a7a865c5aaeb849faa1">
         <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b27f1e0178db157ef69b790090238254f3b864db/classes.dex" />
     </item>
     <item
@@ -111,21 +111,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/knp/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.8.3/854b49396e1e9f9bb0ab025062ddb49c4ed65ca1/engine.io-client-0.8.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="854b49396e1e9f9bb0ab025062ddb49c4ed65ca1">
-        <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/engine.io-client-0.8.3_927b9e141b049945390b9732d74807ba27fd0125/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
         <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_479105dd9070c5bcade7232b217ac844ed4d5610/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/knp/.gradle/caches/modules-2/files-2.1/io.socket/engine.io-client/0.8.3/854b49396e1e9f9bb0ab025062ddb49c4ed65ca1/engine.io-client-0.8.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="854b49396e1e9f9bb0ab025062ddb49c4ed65ca1">
+        <dex dex="/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/transforms/dex/debug/folders/1000/10/engine.io-client-0.8.3_927b9e141b049945390b9732d74807ba27fd0125/classes.dex" />
     </item>
     <item
         is-multidex="true"

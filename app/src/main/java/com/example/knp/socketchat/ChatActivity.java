@@ -44,6 +44,8 @@ public class ChatActivity extends AppCompatActivity {
     static boolean inActivity = true;
 
     private static final String TAG = "LOGIIIIIIIIIIIIII";
+    private static Bundle mBundle = null;
+    SharedPreferences sp;
     RecyclerView recyclerView;
     ChatRecyclerAdapter chatRecyclerAdapter;
     Intent intent;
@@ -55,15 +57,25 @@ public class ChatActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView tvIsTyping;
     boolean isTyping=false;
+    boolean isFirstOpened=true;
 
     String se = "Online: ";
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         setContentView(R.layout.chat_layout);
 
-        final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if(savedInstanceState!=null){
+            Log.i(TAG, "onCreate: sis " + savedInstanceState.toString());
+            messages = savedInstanceState.getParcelableArrayList("MESS");
+            isFirstOpened = false;
+        } else {
+            messages = new ArrayList<>();
+            isFirstOpened = true;
+        }
+
+        sp = PreferenceManager.getDefaultSharedPreferences(this);
 
         if(sp.getString("activeLogin","")==null || sp.getString("activeRoom","")==null){
             intent = new Intent(this, MainActivity.class);
@@ -72,6 +84,7 @@ public class ChatActivity extends AppCompatActivity {
 
         intent = getIntent();
         Log.i(TAG, "onCreate: "+intent.getStringExtra("login"));
+
         mSocket = new MSocket();
 
         tvIsTyping = (TextView)findViewById(R.id.tvIsTyping);
@@ -89,7 +102,7 @@ public class ChatActivity extends AppCompatActivity {
         toolbar.setTitleMarginStart(35);
         setSupportActionBar(toolbar);
 
-        messages = new ArrayList<>();
+
 
         chatRecyclerAdapter = new ChatRecyclerAdapter(this,messages);
 
@@ -124,19 +137,23 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
-
-        mSocket.getSocket().on("newMes", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                try {
-                    Log.i(TAG, "call: newMes calld : "+args[0]);
-                    JSONObject data = new JSONObject(args[0].toString());
-                    Log.i(TAG, "call: 1" );
-                    Message m = new Message(1);
-                    m.setSender(data.getString("login"));
-                    m.setText(data.getString("text"));
-                    m.setTime(data.getString("time"));
-                        if(!inActivity) {
+//-----------------------------------
+        //SOCKET.ON
+//-----------------------------------
+        if(isFirstOpened) {
+            Log.i(TAG, "onCreate: first opened");
+            mSocket.getSocket().on("newMes", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    try {
+                        Log.i(TAG, "call: newMes calld : " + args[0]);
+                        JSONObject data = new JSONObject(args[0].toString());
+                        Log.i(TAG, "call: 1");
+                        Message m = new Message(1);
+                        m.setSender(data.getString("login"));
+                        m.setText(data.getString("text"));
+                        m.setTime(data.getString("time"));
+                        if (!inActivity) {
                             PugNotification
                                     .with(ChatActivity.this)
                                     .load()
@@ -150,76 +167,84 @@ public class ChatActivity extends AppCompatActivity {
                                     .simple()
                                     .build();
                         }
-                    messages.add(m);
-                    update();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        messages.add(m);
+                        update();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
 
-        mSocket.getSocket().on("newUserCon", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                try {
-                    JSONObject data = new JSONObject(args[0].toString());
-                    Message m = new Message(2);
-                    m.setSender(data.getString("login"));
-                    Log.i(TAG, "call: 24442 "+ args[0]);
-                    messages.add(m);
-                    update(data.getInt("count"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            mSocket.getSocket().on("newUserCon", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    try {
+                        JSONObject data = new JSONObject(args[0].toString());
+                        Message m = new Message(2);
+                        m.setSender(data.getString("login"));
+                        Log.i(TAG, "call: 24442 " + args[0]);
+                        messages.add(m);
+                        update(data.getInt("count"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
 
-        mSocket.getSocket().on("closeCon", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                try {
-                    JSONObject data = new JSONObject(args[0].toString());
-                    Message m = new Message(3);
-                    m.setSender(data.getString("login"));
-                    Log.i(TAG, "call: 34443 "+ args[0]);
-                    messages.add(m);
-                    update(data.getInt("count"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            mSocket.getSocket().on("closeCon", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    try {
+                        JSONObject data = new JSONObject(args[0].toString());
+                        Message m = new Message(3);
+                        m.setSender(data.getString("login"));
+                        Log.i(TAG, "call: 34443 " + args[0]);
+                        messages.add(m);
+                        update(data.getInt("count"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
 
-        mSocket.getSocket().on("typing", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                final JSONObject data = (JSONObject) args[0];
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            tvIsTyping.setText(data.getString("login") + " is typing...");
+            mSocket.getSocket().on("typing", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    final JSONObject data = (JSONObject) args[0];
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                tvIsTyping.setText(data.getString("login") + " is typing...");
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
 
-        mSocket.getSocket().on("stop typing", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        tvIsTyping.setText("");
-                    }
-                });
-            }
-        });
+            mSocket.getSocket().on("stop typing", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvIsTyping.setText("");
+                        }
+                    });
+                }
+            });
 
+        } else {
+            Log.i(TAG, "onCreate: not first opened");
+            chatRecyclerAdapter.notifyDataSetChanged();
+        }
+
+//-----------------------------------
+        //SOCKET.ON
+//-----------------------------------
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -306,6 +331,18 @@ public class ChatActivity extends AppCompatActivity {
         super.onPause();
         Log.i(TAG, "onPause: ");
         inActivity = false;
+        /*
+        mBundle = new Bundle();
+        mBundle.putParcelableArrayList("MS",messages);
+        */
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState: ");
+        outState.putParcelableArrayList("MESS",messages);
+
     }
 
     @Override
@@ -315,6 +352,12 @@ public class ChatActivity extends AppCompatActivity {
         inActivity = true;
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancel(4898);
+        /*
+        if(mBundle!=null) {
+            messages = mBundle.getParcelableArrayList("MS");
+            chatRecyclerAdapter = new ChatRecyclerAdapter(this,messages);
+        }
+        */
     }
 
     @Override
