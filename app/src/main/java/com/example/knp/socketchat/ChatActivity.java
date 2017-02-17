@@ -335,6 +335,7 @@ public class ChatActivity extends AppCompatActivity {
         mBundle = new Bundle();
         mBundle.putParcelableArrayList("MS",messages);
         */
+        //TODO: loooooooool
     }
 
     @Override
