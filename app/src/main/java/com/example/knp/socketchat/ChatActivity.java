@@ -142,6 +142,7 @@ public class ChatActivity extends AppCompatActivity {
 //-----------------------------------
         if(isFirstOpened) {
             Log.i(TAG, "onCreate: first opened");
+            
             mSocket.getSocket().on("newMes", new Emitter.Listener() {
                 @Override
                 public void call(Object... args) {
