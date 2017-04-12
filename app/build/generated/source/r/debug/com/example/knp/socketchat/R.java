@@ -2724,7 +2724,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0e005f;
         public static final int action_mode_bar_stub=0x7f0e005e;
         public static final int action_mode_close_button=0x7f0e0041;
-        public static final int action_settings=0x7f0e00b5;
+        public static final int action_settings=0x7f0e00b6;
         public static final int action_text=0x7f0e0093;
         public static final int actions=0x7f0e00a0;
         public static final int activity_chooser_view_content=0x7f0e0042;
@@ -2826,6 +2826,7 @@ containing a value of this type.
         public static final int right_icon=0x7f0e00a2;
         public static final int right_side=0x7f0e009b;
         public static final int room_input_layout=0x7f0e0074;
+        public static final int roomsToolbar=0x7f0e00b5;
         public static final int rvForMessages=0x7f0e007c;
         public static final int screen=0x7f0e001e;
         public static final int scroll=0x7f0e001a;
@@ -2963,10 +2964,11 @@ containing a value of this type.
         public static final int notification_template_part_time=0x7f04003c;
         public static final int pugnotification_custom=0x7f04003d;
         public static final int reg_layout=0x7f04003e;
-        public static final int select_dialog_item_material=0x7f04003f;
-        public static final int select_dialog_multichoice_material=0x7f040040;
-        public static final int select_dialog_singlechoice_material=0x7f040041;
-        public static final int support_simple_spinner_dropdown_item=0x7f040042;
+        public static final int rooms_layout=0x7f04003f;
+        public static final int select_dialog_item_material=0x7f040040;
+        public static final int select_dialog_multichoice_material=0x7f040041;
+        public static final int select_dialog_singlechoice_material=0x7f040042;
+        public static final int support_simple_spinner_dropdown_item=0x7f040043;
     }
     public static final class menu {
         public static final int menu=0x7f0f0000;

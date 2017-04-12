@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res/values/values.xml",
+                    "file": "/home/knp/.android/build-cache/b404664edd74ad995d6237cbba8110694597c8c5/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

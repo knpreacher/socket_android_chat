@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/values-land/values-land.xml",
+                    "file": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/values-land/values-land.xml",
+                    "file": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/values-land/values-land.xml",
+                    "file": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/values-land/values-land.xml",
+                    "file": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -88,7 +88,7 @@
                     "endOffset": 505
                 },
                 "from": {
-                    "file": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/values-land/values-land.xml",
+                    "file": "/home/knp/.android/build-cache/a6e0159ed0a84b8989293be90163b5d31ee4cb80/output/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

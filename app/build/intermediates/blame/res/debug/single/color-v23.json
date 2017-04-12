@@ -1,46 +1,46 @@
 [
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_switch_track.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_spinner.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_btn_colored_text_material.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_edittext.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/color-v23/design_tint_password_toggle.xml"
+        "source": "/home/knp/.android/build-cache/a6e0159ed0a84b8989293be90163b5d31ee4cb80/output/res/color-v23/design_tint_password_toggle.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_color_highlight_material.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_color_highlight_material.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_switch_thumb.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_seek_thumb.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_default.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_default.xml"
     },
     {
         "merged": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/home/knp/AndroidStudioProjects/SocketChat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/color-v23/abc_tint_btn_checkable.xml"
+        "source": "/home/knp/.android/build-cache/1e8062803ce4d65ce8b2f93886b50ba5c24802b0/output/res/color-v23/abc_tint_btn_checkable.xml"
     }
 ]
